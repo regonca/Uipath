@@ -1,0 +1,457 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LoginGoogle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1344,3336</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LoginGoogle_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GoogleLogout" sap:VirtualizedContainerService.HintSize="1354,3271" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1292,3183" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="1254,2932" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="strLogMessage" />
+            <Variable x:TypeArguments="x:String" Name="strFilePath" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="1192,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strLogMessage]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Google Logout started at: " + now.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="1192,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strFilePath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory &amp; "\Data\Output\LogProcess.txt"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1192,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strLogMessage]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogFile - Invoke Workflow File (LogFile\LogFile.xaml)" sap:VirtualizedContainerService.HintSize="1192,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LogFile\LogFile.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strMsg">[strLogMessage]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[strFilePath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Calendar Logout" sap:VirtualizedContainerService.HintSize="1192,1760" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="720f56bb-b83d-414b-85fa-02e8fd850ad8" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1158,1511" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="bolLogged" />
+                    <Variable x:TypeArguments="x:Boolean" Name="bolPopup" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckElement ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'PATH'" sap:VirtualizedContainerService.HintSize="1096,189" sap2010:WorkflowViewState.IdRef="NCheckElement_3" Result="[bolPopup]" ScopeIdentifier="720f56bb-b83d-414b-85fa-02e8fd850ad8" Version="V3">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable BrowserURL="https://calendar.google.com/calendar/u/0/r" CVScreenId="8f9255c6-3943-4009-af70-e5d7a240bbe8" CvTextArea="1037, 252, 19, 21" CvTextArgument="X" CvType="Text" DesignTimeRectangle="1040, 255, 15, 15" DesignTimeScaleFactor="1.090000033378601" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg&amp;gt;path' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='path' class='' aaname='' /&gt;" Guid="1203a1b6-2ca5-4804-85ba-3a1ab1ecae13" InformativeScreenshot="5f561b426de9195fc43e2adb103cb2ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Agenda - Semana de 6 de outubro de 2024' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="8f9255c6-3943-4009-af70-e5d7a240bbe8" CvTextArea="1037, 252, 19, 21" CvTextArgument="X" CvType="Text" DesignTimeRectangle="1021, 236, 52, 52" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Fechar caixa de diálogo' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Fechar caixa de diálogo' tag='BUTTON' type='' class='VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc VfPpkd-zMU9ub' aaname='' /&gt;" Guid="987e7378-c61f-40cd-ba9b-9faa62fd9bc4" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                  <If Condition="[bolPopup]" sap:VirtualizedContainerService.HintSize="1096,57" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="720f56bb-b83d-414b-85fa-02e8fd850ad8" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://calendar.google.com/calendar/u/0/r" CVScreenId="392c248b-e6f8-4943-a6f2-49651245a79b" CvTextArea="1037, 252, 19, 19" CvTextArgument="X" CvType="Text" DesignTimeRectangle="1034, 249, 26, 26" DesignTimeScaleFactor="1.090000033378601" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class=' NMm5M' aaname='' /&gt;" Guid="b22f83cc-0097-486f-8a2f-a8ee2747d2dd" InformativeScreenshot="f2e30cb0ee2dee615ebce8c63ec7a2c6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Agenda - Semana de 6 de outubro de 2024' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="392c248b-e6f8-4943-a6f2-49651245a79b" CvTextArea="1037, 252, 19, 19" CvTextArgument="X" CvType="Text" DesignTimeRectangle="1021, 236, 52, 52" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Fechar caixa de diálogo' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Fechar caixa de diálogo' tag='BUTTON' type='' class='VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc VfPpkd-zMU9ub' aaname='' /&gt;" Guid="a8c17d67-316f-4f30-8d85-70e643989523" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NCheckElement ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'Calendar'" sap:VirtualizedContainerService.HintSize="1096,57" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[bolLogged]" ScopeIdentifier="720f56bb-b83d-414b-85fa-02e8fd850ad8" Timeout="3" Version="V3">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable BrowserURL="https://calendar.google.com/calendar/u/0/r" CVScreenId="2e7e960e-1ccf-49d0-8fe4-276298ba331f" CvTextArea="129, 184, 100, 20" CvTextArgument="Calendar" CvType="Text" DesignTimeRectangle="126, 181, 102, 26" DesignTimeScaleFactor="1.090000033378601" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='heading' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='heading' type='' tag='SPAN' class='gb_sd gb_ad' aaname='Calendar' check:innerText='Calendar' /&gt;" Guid="34bf785b-ee41-4dd0-bddd-917bfc773153" InformativeScreenshot="614b5c58ce298a0796637dd167aaeb13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Calendar *' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="2e7e960e-1ccf-49d0-8fe4-276298ba331f" CvElementArea="31, 182, 30, 26" CvType="Icon" DesignTimeRectangle="34, 181, 26, 26" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='' aaname='' /&gt;" Guid="e36ea9d9-73f9-4eb6-a93d-2422df8e437e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVEhLY/g/QGDUYrqBUYvpBkYtBoMjx078X7dxM1Xwjl17oKaiAqwWd/ZO+B+XnEEVXFBSCTUVFWC1ePmqtf/bunqpgqfMmA01FRWMJi66gcGVuAbM4kePn/y/fuMmVfCdu/egpqKC0cQFBiOvyBwwH9MDjFpMNzBqMZ3A//8A75cZT44jdJoAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckElement.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckElement>
+                  <If Condition="[bolLogged]" sap:VirtualizedContainerService.HintSize="1096,1121" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1062,858" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="Check App State 'Calendar'" sap:VirtualizedContainerService.HintSize="1000,773" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="720f56bb-b83d-414b-85fa-02e8fd850ad8" Timeout="5" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,533" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'A https://www.google.co…'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="720f56bb-b83d-414b-85fa-02e8fd850ad8" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://calendar.google.com/calendar/u/0/r" CVScreenId="ab3454f5-bf66-4422-95f2-07514afc42a5" CvElementArea="1552, 174, 39, 41" CvTextArea="1564, 186, 15, 18" CvType="Icon" DesignTimeRectangle="1550, 172, 44, 44" DesignTimeScaleFactor="1.090000033378601" FullSelectorArgument="&lt;webctrl aria-label='Google Account: Robson Goncalves  &amp;#xD;&amp;#xA;(regonca2@gmail.com)' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Google Account: Robson Goncalves  &amp;#xD;&amp;#xA;(regonca2@gmail.com)' tag='A' type='' class='gb_A gb_Za gb_0' aaname='' /&gt;" Guid="df239b95-6927-4beb-8b4c-aa5e073c6362" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANiSURBVGhD7ZjbTxNBFMb9y9REjYka39AYqCIRtGgoRKwFFMEIlIj3C9FINLxovMRoxICIQkAB9UGEGAJGBESg3KS0hfpynG/NmmKnc9ldbJr0S75k09k5O7+dmTNnu45SXGmAZCsNkGylAZItxwACc/P09FUHVdU3UE5pJW3P89CGrFzDuMZvaMM9uNcp2Qbo7eunknNXaX3mAS2jD/ralWWAke8Tlgb+rxEDsazKEgCWAZYGb0BWjFiIaUXaALcePOYOwgkjtq60ANZy8KZ1IZQBMMW8B66FdZaTEgA2mZNrXmY8S3VjKwE4kW10jWeqSAqAXM17wP+wyjkhBVB9+5j2TfsO0eZs9ypvdOVx71exyiwIAXDk8wLzvOOghwrOnKWyi9f/+MI1Kq27QrsLfQaYVRBZ2SEE0Mk8+RU11D84TJHl5b8OMy+GQvRjeoZa3/TQrsLj3L4iyzKSEADFFy8oz0dO19LQyCgtLoWopfMtPWx+SY+a26iZXY+MT1CQgbR1v6Os4hPc/omMMYgkBEAFyQvKswkwNTtHtTfvUEaB1/CeohI66j9P45NTRlt+pZ/bP5ExBpGEACiDeUF5NgEmAzNUfql+VRs28ye2vIKhsLFPYttkxhhEEgLoHF4iAJe3nL6MjtPs/IJxX2ybzBiDSEIAXsBENgEWFoN0/3kr1dy4TX7muoZGetbeaWST1z3vyXVMbw/AIjk+A9HoL2PTDn0bo2HmMbb2V6JRmmFv/3LjXdrpLuL2T2RbM2BlD4QiEer52E9P2joMN7V30VcGFGAA95paKMOjl0pt7QErWYi3B/wsK2EJTUwHyH2qelWbzLaykJVzgAcA9w0O0U92RuhmIVvngM5JLAP4MPCZlsIR8lTVxbWJbOsk1qmFZAC9fQOsvFihwmo9AFu1EKRajcoAXnR1UziybJQWLu/JuHaebVejkOr3wNacw5RZXEZ72eC25RbEtaOsyPZVsILOR1v2u+PaeXbkewBSnQUnrfL2ISWAlP8mhnQykl3LMk+slAGglP5fyNRaQugOHtIGgDDFTu4JxNJZNrGyBABhkzmRnRBDdcPyZBnAFHK1FRD0UcnzMtkGMIUjH8sAxRcqSJTBWBowrvEb2nCPrDzQkWMAyVIaINlKAyRbKQ5A9Bu9BxHjNXM17wAAAABJRU5ErkJggg==" InformativeScreenshot="42516f16958f9cd5e99e59c394f4755c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Calendar - October 2024' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="1498, 172, 43, 44" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='gb_A' aaname='' /&gt;" Guid="2140dd8d-5056-471f-aa56-c71aca22440a" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Sign out'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="720f56bb-b83d-414b-85fa-02e8fd850ad8" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://ogs.google.com/u/0/widget/account?yac=1&amp;amb=1&amp;origin=https%3A%2F%2Fcalendar.google.com&amp;cn=account&amp;pid=24&amp;spid=24" CVScreenId="b527af27-b8cd-4fdd-9995-86edeecb6a70" CvTextArea="1232, 774, 62, 18" CvTextArgument="Sign out" CvType="Text" DesignTimeRectangle="1234, 771, 323, 22" DesignTimeScaleFactor="1.090000033378601" ElementType="Text" FullSelectorArgument="&lt;webctrl name='account' tag='IFRAME' /&gt;&lt;webctrl aaname='Sign out' class='SedFmc' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='account' tag='IFRAME' /&gt;&lt;webctrl aaname='Sign out' class='SedFmc' tag='DIV' type='' check:innerText='Sign out' /&gt;" Guid="56697254-9eeb-4c22-9985-83774cf9ed5c" InformativeScreenshot="87b34fdae7d8f982db1b90ebb7ac5f84.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Calendar - October 2024' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="b527af27-b8cd-4fdd-9995-86edeecb6a70" CvElementArea="1188, 769, 29, 27" CvType="Icon" DesignTimeRectangle="1193, 772, 21, 19" ElementType="Icon" FullSelectorArgument="&lt;webctrl name='account' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;a&amp;gt;span&amp;gt;div&amp;gt;svg&amp;gt;path' idx='2' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl name='account' tag='IFRAME' /&gt;&lt;webctrl type='' class='' tag='path' aaname='' /&gt;" Guid="b894eb91-73f9-443b-9f3c-254f2f66a81a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAYAAAD+4+QTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFFSURBVEhLY/j+6+9/WmP6WfL1x+//y1au/l9UVva/oLgYL37z/hNWg/BhsCX9k6f8d3Z3Iwq/fPMeq0H4MNiStMxMsAE1DQ3/5y5YiBd/+PwNq0H4MNiS5PQ0sCXbdu7GqohSDLYkJT2dIksIxRPFPjl26sx/b3+///sPH8EqD8IU+6S8qgqs18XD/f+OPXuxqqHYJ5+//fxfUlEBt2j7rj0YaqgS8SCLKmpq4BZt2rodRR6vJUeOnwSLk4PXbthEe0sWLVuOagmuiH/19sP/U2fPE4VBGRlmwcIly1DMoUqcLF25Cm7B3IWLMOQptgRU1MAsmDF7DlY1VLMElwUgjDdOiMUnzpzDKg7DVIkTQhhsSSq0qJ85dx7WlIOMQRkP3RBCGGxJd38/2BJiMNmVFkhjeXX1f1dPD6wGI2OyLaEt/vsfAFBPtXtVa/CuAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="496,523" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="strLogMessage" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[strLogMessage]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["Error to LogOut exception:  Unable to Load Calender."]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogFile - Invoke Workflow File (LogFile\LogFile.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LogFile\LogFile.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strMsg">[strLogMessage]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[strFilePath]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                              <Throw Exception="[New BusinessRuleException(strLogMessage)]" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://calendar.google.com/calendar/u/0/r" CVScreenId="ab3454f5-bf66-4422-95f2-07514afc42a5" CvTextArea="129, 184, 100, 20" CvTextArgument="Calendar" CvType="Text" DesignTimeRectangle="126, 181, 102, 26" DesignTimeScaleFactor="1.090000033378601" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='heading' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='heading' type='' tag='SPAN' class='gb_sd gb_ad' aaname='Calendar' check:innerText='Calendar' /&gt;" Guid="c4b564ae-d754-4e26-b150-47a35926e5fc" InformativeScreenshot="f30818c6b84ac774d5439cf038475abe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Calendar - October 2024' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="ab3454f5-bf66-4422-95f2-07514afc42a5" CvElementArea="31, 182, 30, 26" CvType="Icon" DesignTimeRectangle="37, 187, 20, 13" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="2446420a-6721-4b2c-9a05-d3b322d321ac" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABlSURBVDhPY/hPYzCMLDhy7MT/dRs3UwXv2LUHaiqSBZ29E/7HJWdQBReUVEJNRbJg+aq1/9u6eqmCp8yYDTV1WEUyrQD9IpnmFjx6/OT/9Rs3qYLv3L0HNXVYRfLQLypo44P//wFO2XCHmmPaoAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1616, 876" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVFhH7ZW9SsNQHMXv4CuIdfMRHGx0lNg38AEcdXPvIAGtk0/QybGdHVwCnexacPFrKFgEP4qlqIgoxJzLjcTkeG3uTaxDDvxouU3yO7n5k4rV/dcNt/E0chvPQZHMb54m6VS2egsi/LGfPLgISAHQQQF6Qt4QuaQs8H8L5J13f4ZSFshUYPzyEWwfDrR0L/i5TA4yFbgevtFBitPuPqqjv4fJQeYdaIWCJAdHt18FTorcARbsilM/l/KmP1Sr6TA5sC6A5w45PnVhcmBVIJoJp34mv+vC5MCqwKR3jzA5MC6AgYQc/Hb3CJMD4wLHvbGU1/Yu1Yo+TA6MC0Tbv9O+USv6MDkwLlDbvZIFmv6DWtGHyYFxgej5//TiSYbJgVGB+AAOJhhAhMmBUYH4f8JUCpiEyUFZQFS8lYCx1FrPlfu1aoo71/GmVkDKESYH7CI2UDnC5IBdxAYqR+a85dFfFUjJkVmvuhgK+0UXoHIhxCcgyPAlzc6czQAAAABJRU5ErkJggg==" InformativeScreenshot="22694da353046a2bb2c246e476a8624c.jpg" Selector="&lt;html app='chrome.exe' title='Google Calendar - October 2024' /&gt;" Title="Google Calendar - October 2024" Url="[in_Config(&quot;NTD_Google_Calendar_Login_URL&quot;).ToString]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign sap:VirtualizedContainerService.HintSize="1192,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strLogMessage]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Google Logout ended at: " + now.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogFile - Invoke Workflow File (LogFile\LogFile.xaml)" sap:VirtualizedContainerService.HintSize="1192,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="LogFile\LogFile.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strMsg">[strLogMessage]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[strFilePath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1192,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strLogMessage]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1258,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Throw Exception="[New Exception(&quot;Google LogOut Error : &quot; &amp; exception.Message)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

@@ -1,0 +1,17 @@
+﻿Google Logout started at: 10/09/2024 20:41:06
+Google Logout ended at: 10/09/2024 20:42:00
+Google Logon started at: 10/09/2024 20:42:01
+Login for Google Calender will be: regonca2@gmail.com
+Page Loaded Successfully
+Google Logon ended at: 10/09/2024 20:42:52
+Get Calendar started at: 10/09/2024 20:42:52
+Event List Beginning
+Day: 7, Time: 10am, Title: Weekly Connect
+Day: 9, Time: 3:17pm, Title: Project 22 Issue
+Day: 14, Time: 10am, Title: Weekly Connect
+Day: 16, Time: 1:15pm, Title: Project Memo Ki
+Day: 21, Time: 10am, Title: Weekly Connect
+Day: 28, Time: 10am, Title: Weekly Connect
+Event List End
+Total Events found: 6
+Get Calendar ended at: 10/09/2024 20:43:23
